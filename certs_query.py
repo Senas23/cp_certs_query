@@ -41,7 +41,7 @@ def main():
     process = subprocess.Popen(['cpca_client', 'lscert', '-kind', kind], stdout=subprocess.PIPE, universal_newlines=True)
     print(f"{bcolors.HEADER}Printing {kind} type of certificates:{bcolors.ENDC}")
     certificates += read_cert(process)
-  print(certificates)
+  #print(certificates)
 
 def read_cert(process: subprocess.Popen) -> list:
   gateways = []
