@@ -5,8 +5,8 @@ re_subject = '^Subject\s=\sCN=([^,]+).+?$'
 re_status_type = '^Status\s=\s(\w+)\s{3}Kind\s=\s(\w+).+?$'
 re_date = '^Not_Before.*Not_After:\s(.+?)$'
 
-days_warning = 500
-days_critical = 120
+days_warning = 60
+days_critical = 30
 days_emergency = 7
 
 class bcolors:
