@@ -31,9 +31,9 @@ def banner():
     By: The Machine
     """
   print(logo)
-  print(f"Color Legend:\n{bcolors.GREEN}{days_warning} - Still good, but start on planning to reset certificate")
-  print(f"{bcolors.WARNING}{days_critical} - Still ok, but put in the RFC for certificate renewal")
-  print(f"{bcolors.FAIL}{days_emergency} - You risk outage, renew certificate NOW or already too late\n{bcolors.ENDC}")
+  print(f"Color Legend:\n{bcolors.GREEN}{days_warning} - Still GOOD, but start planning to reset the certificate")
+  print(f"{bcolors.WARNING}{days_critical} - Still OK, but put in the RFC for certificate renewal")
+  print(f"{bcolors.FAIL}{days_emergency} - You risk outage, renew your certificate NOW\n{bcolors.ENDC}")
 
 def main():
   banner()
