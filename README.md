@@ -14,6 +14,10 @@ Clone repo or copy the `certs_query.py` to the SMS/MDS.
 ```
 git clone https://github.com/Senas23/cp_cert_query.git
 ```
+Set read/write/exec flags:
+```
+chmod 0770 certs_query.py
+```
 On SMS run:
 ```
 $FWDIR/Python/bin/python3 certs_query.py
@@ -21,6 +25,10 @@ $FWDIR/Python/bin/python3 certs_query.py
 On MDS run:
 ```
 $MDS_FWDIR/Python/bin/python3 certs_query.py
+```
+Or
+```
+./certs_query.py
 ```
 
 ## Developement Environment
