@@ -2,9 +2,9 @@
 import re, subprocess
 from datetime import datetime
 
-re_subject = '^Subject\s=\sCN=([^,]+).+?$'
-re_status_type = '^Status\s=\s(\w+)\s{3}Kind\s=\s(\w+).+?$'
-re_date = '^Not_Before.*Not_After:\s(.+?)$'
+re_subject = '^Subject\s=\sCN=([^,]+).+$'
+re_status_type = '^Status\s=\s(\w+)\s{3}Kind\s=\s(\w+).+$'
+re_date = '^Not_Before.*Not_After:\s(.+)$'
 
 days_warning = 60
 days_critical = 30
@@ -37,13 +37,12 @@ def banner():
 
 def main():
   banner()
-  certificates = []
   for kind in ['IKE', 'SIC']:
     process = subprocess.Popen(['cpca_client', 'lscert', '-kind', kind], stdout=subprocess.PIPE, universal_newlines=True)
     print(f"{bcolors.HEADER}Printing {kind} type of certificates:{bcolors.ENDC}")
-    certificates += read_cert(process)
+    read_cert(process)
 
-def read_cert(process: subprocess.Popen) -> list:
+def read_cert(process: subprocess.Popen):
   gateways = []
   cert = {}
   date_diff = None
@@ -73,7 +72,7 @@ def read_cert(process: subprocess.Popen) -> list:
         else:
           print(f"{bcolors.ENDC}{cert}")
       cert = {}
-  return gateways
+
 
 if __name__ == "__main__":
   main()
